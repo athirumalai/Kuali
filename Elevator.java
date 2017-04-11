@@ -28,4 +28,81 @@ public class Elevator {
 	
 	boolean directionUp;
 	
+	public boolean isDirectionUp() {
+		return directionUp;
+	}
+
+	public void setDirectionUp(boolean directionUp) {
+		this.directionUp = directionUp;
+	}
+
+	Elevator(int id){
+		this.id = id;
+	}
+	
+	public int getFloorAt() {
+		return floorAt;
+	}
+
+	public void setFloorAt(int floorAt) {
+		this.floorAt = floorAt;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getElevatorAt() {
+		return elevatorAt;
+	}
+
+	public void setElevatorAt(int elevatorAt) {
+		this.elevatorAt = elevatorAt;
+	}
+
+	public boolean isDoorOpen() {
+		return doorOpen;
+	}
+
+	public void setDoorOpen(boolean doorOpen) {
+		this.doorOpen = doorOpen;
+	}
+
+	public int getFloorsTraversed() {
+		return floorsTraversed;
+	}
+
+	public void setFloorsTraversed(int floorsTraversed) {
+		this.floorsTraversed = floorsTraversed;
+	}
+
+	public int getTrips() {
+		return trips;
+	}
+
+	public void setTrips(int trips) {
+		this.trips = trips;
+	}
+
+	public boolean isServiccerequired() {
+		return serviccerequired;
+	}
+
+	public void setServiccerequired(boolean serviccerequired) {
+		this.serviccerequired = serviccerequired;
+	}
+
+	public boolean isIntransit() {
+		return isIntransit;
+	}
+
+	public void setIntransit(boolean isIntransit) {
+		this.isIntransit = isIntransit;
+	} 
+	
+	
 }
