@@ -104,5 +104,68 @@ public class Elevator {
 		this.isIntransit = isIntransit;
 	} 
 	
+	/**
+	 * complete the trip and set all appropriate parameters.
+	 * @param startFloor
+	 * @param endFloor
+	 */
+	public void transport(int startFloor, int endFloor, boolean up){
+		
+		isIntransit = true;
+		directionUp = up;
+		openDoor(startFloor);
+		closeDoor(startFloor);
+		
+		//Traverse floor and report.
+		int trip = endFloor-startFloor; 
+		int finalCount = trip*1000;
+		int j = 0 ;
+		elevatorAt = startFloor ;
+		for(int i=0; i<finalCount; i++){			
+			j++;
+			if(j==1000){
+				if(up){
+					elevatorAt++;					
+				}else{
+					elevatorAt--;
+				}
+				System.out.println("Elevator no. " + id + " at "+ elevatorAt);
+				j=0;
+			}
+		}		
+		
+		floorsTraversed += endFloor - startFloor; 
+		trips++;
+		if(trips==100){
+			serviccerequired = true; 
+		}
+		
+		openDoor(endFloor);
+		closeDoor(endFloor);
+		
+		isIntransit = false;
+	}
+	
+	/**
+	 * Open elevator door and report - the count delay can be handled better
+	 * @param floor
+	 */
+	private void openDoor(int floor){
+		for(int i = 0; i <1000; i++){
+			
+		}
+		System.out.println("Elevator no. "+ id+ " Door opened at floor "+ floor);
+	}
+	
+	/**
+	 * Close elevator door and report - the count delay can be handled better
+	 * @param floor
+	 */
+	private void closeDoor(int floor){
+		for(int i = 0; i <1000; i++){
+			
+		}
+		System.out.println("Elevator no. "+ id+ " Door closed at floor "+ floor);
+	}
 	
 }
