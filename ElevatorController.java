@@ -69,6 +69,46 @@ class ElevatorCentralComand {
 		}
 	}
 	
+	/**
+	 * Again make it simple - the elevators are lined up in a row 1 - thru - 10.
+	 * @param startFloor
+	 * @param elevatorId
+	 * @param up
+	 * @return
+	 */
+	private int getElevatorforTransport(int startFloor, int elevatorId, boolean up){
+		
+		/**
+		 * This flat out pseudo code.When i say check use the flag. 
+		 */		
+		// 1. Left corner most elevator. 
+		// 2. Loop thru from 0 to 9 
+		// 3. Check if any of elevators are in transit - if yes - if in same direction - yes - if on floor beloew or above requested floor depending on the direction RETURN ID of that elevator. PRIORITY 1 - BREAK
+												      //    4. if no 
+														    //    5. if any elevator is already on that floor return that elevator id. PRIORITY 2 -- BREAK
+															//	  6. else step thru and see which elevator is on closest floor - subtract current floor next elevators floor hold on to it, do same with next subscript 
+															//    7. if this value is lower hold on to this and subsequently figure out the lowest value that way and grab that elevators index and return it. -- PRIORITY 3 -- BREAK.
+		
+		// 8. Right corner most elevator.
+		// 9. Loop thru from 9 to 0 and use the same logic.
+		// 10. repeat 3 thru 7 and return elevator index.
+		
+		// 11.  If the request is from the center - perform 3 thru 7 twice from center to 0 and from center to 9
+		// 12. compare the two results by subtracting the elevator id to the elevator index returned from either side and the closest one wins YAE!!!
+		
+		return 1;
+	}
+	
+	
+	private void stopMovingElevator(int elevatorId, int requestedFloor){
+		for(int i=0; i<11000;i++){
+			//give this time just for logic reasons 
+		}
+		elevators[elevatorId].setElevatorAt(requestedFloor);
+		elevators[elevatorId].setIntransit(false);
+	}
+	
+	
 }
 
 
